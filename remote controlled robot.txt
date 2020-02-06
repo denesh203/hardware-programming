@@ -1,0 +1,49 @@
+Code :-
+int lmin1=6;
+
+int lmin2=7;
+int rmin1=8;
+int rmin2=9;
+int ls=10;
+int rs=11;
+void setup() {
+  pinMode(lmin1,OUTPUT);
+  pinMode(lmin2,OUTPUT);
+  pinMode(rmin1,OUTPUT);
+  pinMode(rmin2,OUTPUT);
+  pinMode(ls,INPUT);
+  pinMode(rs,INPUT);
+}
+
+void loop() {
+  int lsvalue=digitalRead(ls);
+  int rsvalue=digitalRead(rs);
+  if(lsvalue==LOW && rsvalue==LOW)
+  {
+    digitalWrite(lmin1,HIGH);
+    digitalWrite(lmin2,LOW);
+    digitalWrite(rmin1,HIGH);
+    digitalWrite(rmin2,LOW);
+  }
+  else if(lsvalue==HIGH && rsvalue==LOW)
+  {
+    digitalWrite(lmin1,LOW);
+    digitalWrite(lmin2,HIGH);
+    digitalWrite(rmin1,HIGH);
+    digitalWrite(rmin2,LOW);
+  }
+  else if(lsvalue==LOW && rsvalue==HIGH)
+  {
+    digitalWrite(lmin1,HIGH);
+    digitalWrite(lmin2,LOW);
+    digitalWrite(rmin1,LOW);
+    digitalWrite(rmin2,HIGH);
+  }
+  else 
+  {
+    digitalWrite(lmin1,HIGH);
+    digitalWrite(lmin2,LOW);
+    digitalWrite(rmin1,HIGH);
+    digitalWrite(rmin2,LOW);
+  }
+}
